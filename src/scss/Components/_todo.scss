@@ -1,0 +1,29 @@
+.todo{
+    padding: 1rem;
+    border-bottom: 1px solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &_completed{
+        .todo__content{
+            text-decoration: line-through;
+        }
+    }
+    &__checkmark{
+        height: 1rem;
+        width: 1rem;
+        border:1px solid black;
+        border-radius: 0.5rem;
+ 
+    }
+    &__content{
+        flex: 0.9;
+    }
+    &__close{
+        height: 0.6rem;
+        width: 0.6rem;
+        background-image: url('../../img/icon-cross.svg');
+        background-position: center;
+    }
+}
