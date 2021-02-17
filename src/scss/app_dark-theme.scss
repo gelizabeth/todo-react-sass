@@ -67,3 +67,10 @@ $darkest-grayish-blue: hsl(237, 14%, 26%);
         }
     }
 }
+@include media-lg{
+    .app_dark{
+        .header {
+            background: url('../img/bg-desktop-dark.jpg');
+        }
+    }
+}

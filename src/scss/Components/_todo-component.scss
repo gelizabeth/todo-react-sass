@@ -42,4 +42,26 @@
      font-size: 0.9rem;
      margin: 0 1rem;
  }
+ .display-none{
+    display: none;
+}
+}
+@include media-lg{
+    .todo-component{
+        padding: 0 30%;
+        top:-7rem;
+        &__buttons{
+            display: none;
+        }
+        &__button{
+            margin: 0 0.3rem;
+        }
+        .display-none{
+            display: flex;
+            box-shadow: none;
+            width: 25%;
+            padding: 0;
+        }
+    }  
+    
 }

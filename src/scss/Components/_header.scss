@@ -15,3 +15,9 @@
         @include transition-ease;
     }
 }
+@include media-lg{
+    .header{
+        padding: 3rem 30%;
+        height: 32vh;
+    }
+}

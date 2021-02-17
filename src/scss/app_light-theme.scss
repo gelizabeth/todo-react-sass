@@ -62,3 +62,15 @@ $very-dark-grayish-blue: hsl(235, 19%, 35%);
     }
     
 }
+@include media-lg{
+    .app_light{
+        .header {
+            background: url('../img/bg-desktop-light.jpg');
+        }
+        .todo-component{
+            &__list__footer{
+                color: $dark-grayish-blue;
+            }
+        }
+    }
+}

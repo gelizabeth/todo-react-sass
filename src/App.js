@@ -8,11 +8,17 @@ import { useState } from 'react';
 import { TodoComponent} from './Components/TodoComponent';
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  let themeLocal = JSON.parse(window.localStorage.getItem('theme'));
+  if(!themeLocal) themeLocal = 'light';
+  const [theme, setTheme] = useState(themeLocal);
   const getTheme = () => {
     if(theme === 'light'){
       setTheme('dark');
-    } else setTheme('light');
+      window.localStorage.setItem('theme', JSON.stringify('dark'));
+    } else {
+      setTheme('light');
+      window.localStorage.setItem('theme', JSON.stringify('light'));
+            };
   }
   
   return (
