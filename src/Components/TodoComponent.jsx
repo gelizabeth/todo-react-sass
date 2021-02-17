@@ -10,7 +10,10 @@ export const TodoComponent = () => {
     const [todos, setTodos] = useState(JSON.parse(window.localStorage.getItem('todos')));
     if (todos){
         n = todos.filter(todo => todo.state == 'active').length;
-    } else n = JSON.parse(window.localStorage.getItem('todos')).filter(todo => todo.state == 'active').length; 
+    } else 
+        if(JSON.parse(window.localStorage.getItem('todos'))){
+            n = JSON.parse(window.localStorage.getItem('todos')).filter(todo => todo.state == 'active').length;
+        } else n = 0;
 
     const [showList, setShowList] = useState(todos);
     const [newTodo, setNewTodo] = useState('');
