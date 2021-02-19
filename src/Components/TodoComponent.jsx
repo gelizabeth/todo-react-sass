@@ -34,7 +34,10 @@ export const TodoComponent = () => {
     //updates local storage and todo count when todo list changed
     useEffect(() => {
         window.localStorage.setItem('todos', JSON.stringify(todos));
-        setItemsLeft(todos.filter(todo => todo.state === 'active').length);
+        if(todos){
+            setItemsLeft(todos.filter(todo => todo.state === 'active').length);
+        }
+        
     }, [todos])
 
     //changing tab handler
