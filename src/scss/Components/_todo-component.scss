@@ -5,8 +5,9 @@
  padding:  0 2rem;
  position: relative;
  top: -5rem;
+ 
  &__input{
-     padding: 1rem;
+     padding: 1.3rem;
      font-size: 0.8rem;
      outline: none;
      border: none;
@@ -23,6 +24,9 @@
          flex-direction: row;
          justify-content: space-between;
          padding: 1rem;
+         p:last-of-type{
+             cursor: pointer;
+         }
          
      }
  }
@@ -41,6 +45,7 @@
      font-weight: 700;
      font-size: 0.9rem;
      margin: 0 1rem;
+     @include transition-ease;
  }
  .display-none{
     display: none;

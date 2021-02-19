@@ -35,6 +35,12 @@ $darkest-grayish-blue: hsl(237, 14%, 26%);
             
             &__footer{
                 color: $dark-grayish-blue;
+                p:last-of-type{
+                    @include transition-ease;
+                    &:hover{
+                        color: $light-grayish-blue-hover;
+                    }
+                }
             }
         }
         &__buttons{

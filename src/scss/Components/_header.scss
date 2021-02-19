@@ -13,6 +13,7 @@
         width: 1.6rem;
         height: 1.6rem;
         @include transition-ease;
+        cursor: pointer;
     }
 }
 @include media-lg{

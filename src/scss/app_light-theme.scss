@@ -29,6 +29,12 @@ $very-dark-grayish-blue: hsl(235, 19%, 35%);
             box-shadow: 0px 5px 15px 5px rgba($light-grayish-blue, 0.5);
             &__footer{
                 color: $light-grayish-blue;
+                p:last-of-type{
+                    @include transition-ease;
+                    &:hover{
+                        color: $very-dark-grayish-blue;
+                    }
+                }
             }
         }
         &__buttons{
