@@ -55,12 +55,25 @@ export const TodoComponent = () => {
     const setCompleted = (id) => {
     setTodos(todos.map((todo, index)=>{
         if(index === id){
-           todo.state='completed';
+            console.log(todo);
+            if(todo.state==='completed'){
+                todo.state='active';
+                setItemsLeft((prev) => prev + 1);
+                
+            } else {
+                todo.state='completed';
+                setItemsLeft((prev) => prev - 1);
+            };
         }
         return todo;
-    }))
-      setItemsLeft((prev) => prev - 1);
+    }));
+    }
+    const deleteItem = (id) => {
         
+        setTodos((prev)=> prev.filter((todo, index)=>{
+            if(index!==id) {return todo;}
+            else if(todo.state==='active'){setItemsLeft((prev) => prev - 1);}
+        }));
     }
     const clearCompleted = () => {
         setTodos((prev) => prev.filter(prev => prev.state !== 'completed'));
@@ -82,7 +95,8 @@ export const TodoComponent = () => {
                         todo={todo}
                         key={index}
                         id={index}
-                        onChecked={setCompleted}></Todo>)}
+                        onChecked={setCompleted}
+                        onDelete={deleteItem}></Todo>)}
                 <div className="todo-component__list__footer">
                     <p>{itemsLeft} {itemsLeft === 1 ? `item` : `items`} left</p>
                     <div className="todo-component__buttons display-none">
