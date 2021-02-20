@@ -7,8 +7,11 @@ export const Header = ({getTheme}) => {
     }
     return (
         <div className="header">
-            <h1>TODO</h1>
+        <div className="header__container">
+        <h1>TODO</h1>
             <div className="theme-btn" onClick={setTheme}></div>
+        </div>
+           
         </div>
     )
 }

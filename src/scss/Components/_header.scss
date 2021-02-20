@@ -1,21 +1,30 @@
 @import '../config';
 .header{
     height: 25vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+   
     padding:  3rem 2rem;
-    h1{
-        color: #fff;
-        letter-spacing: 0.5rem;
+    .header__container{
+        max-width: 540px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+        h1{
+            color: #fff;
+            
+            letter-spacing: 0.5rem;
+        }
+        .theme-btn{
+            width: 1.6rem;
+            height: 1.6rem;
+            @include transition-ease;
+            
+            cursor: pointer;
+        }
     }
-    .theme-btn{
-        width: 1.6rem;
-        height: 1.6rem;
-        @include transition-ease;
-        cursor: pointer;
-    }
+    
 }
+
 @include media-lg{
     .header{
         padding: 3rem 30%;

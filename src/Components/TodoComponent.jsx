@@ -37,7 +37,6 @@ export const TodoComponent = () => {
         if(todos){
             setItemsLeft(todos.filter(todo => todo.state === 'active').length);
         }
-        
     }, [todos])
 
     //changing tab handler
@@ -52,7 +51,7 @@ export const TodoComponent = () => {
 
     //adding new todo to the list on enter key
     const addTodo = (event) => {
-        if (event.keyCode === 13) {
+        if (event.keyCode === 13 && newTodo) {
             if (todos) {
                 setTodos((prev) => [...prev, { todo: newTodo, state: 'active' }]);
             } else setTodos((prev) => [{ todo: newTodo, state: 'active' }]);

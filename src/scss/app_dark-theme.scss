@@ -60,6 +60,10 @@ $darkest-grayish-blue: hsl(237, 14%, 26%);
     .todo{
         border-bottom-color: $very-dark-grayish-blue;
         color: $light-grayish-blue;
+        &__close{
+            opacity: 0.6;
+            
+        }
         &_completed{
             .todo__content{
                 color: $dark-grayish-blue;
@@ -68,7 +72,10 @@ $darkest-grayish-blue: hsl(237, 14%, 26%);
         &__checkmark{
             border-color:$very-dark-grayish-blue;
             &_checked{
-                background: url('../img/icon-check.svg') no-repeat center, $check-background;
+                background: url('../img/icon-check.svg') 7px/9px, $check-background;
+                background-position: center;
+                background-repeat: no-repeat;
+                
             }
         }
     }
