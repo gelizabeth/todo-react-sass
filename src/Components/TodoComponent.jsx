@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Todo from './Todo';
 import '../scss/Components/_todo-component.scss';
 
+
 export const TodoComponent = () => {
     let n;
 
@@ -96,7 +97,9 @@ export const TodoComponent = () => {
                 value={newTodo}
                 onChange={changeNewTodo}
                 onKeyUp={addTodo} />
+                
             <div className="todo-component__list">
+            
                 {showList?.map((todo, index) =>
                     <Todo
                         todo={todo}
@@ -104,6 +107,7 @@ export const TodoComponent = () => {
                         id={index}
                         onChecked={setCompleted}
                         onDelete={deleteItem}></Todo>)}
+                        
                 <div className="todo-component__list__footer">
                     <p>{itemsLeft} {itemsLeft === 1 ? `item` : `items`} left</p>
                     <div className="todo-component__buttons display-none">
@@ -113,8 +117,9 @@ export const TodoComponent = () => {
                     </div>
                     <p onClick={clearCompleted}>Clear Completed</p>
                 </div>
-
+            
             </div>
+           
 
             <div className="todo-component__buttons">
                 <button className={`todo-component__button ${state === 'all' && `todo-component__button_active`}`} onClick={changeState} value='all'>All</button>
